@@ -34,6 +34,12 @@ import java.io.FileReader;
 
 %%
 
-":"     {tokens.add(":"); System.out.println("DOS PUNTOS");}
-";"     {tokens.add(":"); System.out.println("PUNTO Y COMA");}
-[A-Za-z]    {tokens.add("id"); System.out.println("IDENTIFICADOR");}
+[a-z_A-Aa-z][a-zA-Z]+   {tokens.add("atomo"); System.out.println("ATOMO");}
+[A-Za-z]+  {tokens.add("var"); System.out.println("VARIABLE");}
+[+.0-9][-.0-9][.0-9]    {tokens.add("pto_fijo"); System.out.println("PUNTO FIJO");}
+":-"  {tokens.add("imp"); System.out.println("IMPLICA");}
+[0-9]  {tokens.add("pto_flot"); System.out.println("PUNTO FLOTANTE");}
+[0-9] {tokens.add("cade"); System.out.println("CADENA");}
+[0-9]  {tokens.add("ent"); System.out.println("ENTERO");}
+[0-9]  {tokens.add("list"); System.out.println("LISTA");}
+[0-9]  {tokens.add("pred"); System.out.println("PREDICADO");}
